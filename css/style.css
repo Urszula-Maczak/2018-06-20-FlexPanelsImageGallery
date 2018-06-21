@@ -1,0 +1,76 @@
+html {
+	box-sizing: border-box; /*określa rozmiar obszaru html (czyli w tym wypadku są odjete wszelkie paddingi, bordery), 
+	więc niemasz ddatkowego obszaru wokól HTMLa. Wartość domyślna, czyli wlicza paddingi, bordery jest content-box*/
+	background:#ffc600;
+	font-family:'helvetica neue';
+	font-size: 20px;
+    font-weight: 200;
+}
+body {
+	margin: 0 auto;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+/*pseudoselektory będą :before, :after wszystkich elemenetów * resetuje border-box, więc od teraz przy każdym
+elemencie będzie można zastosować conten-box czy padding-box bo jest wyczyszczone przez inherit*/ 
+
+.panels {
+	min-height: 100vh; /*minimalna wysokość elemntu*/
+	overflow: hidden; /*content elementu ukryty dzięki hidden, inne wartości to: scroll, auto, visble*/
+	display: flex; /*ulożenie images z poziomej pozycji na pionową*/	
+}
+.panel {
+	background:#6B0F9C;
+	box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1); /*dodaje cienie elementowi. Inset to Opcjonalnie.
+	Zmienia cień z zewnętrznego cienia (początkowy) na wewnętrzny cień*/
+	color: white; 
+	text-align: center;
+	align-items: center;
+	/*transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+      font-size: 20px;
+      background-size:cover;
+      background-position:center;*/
+    flex: 1; /*powoduje, że niepotrzebna powstała przestrzeń jest podzielona miedzy elementami paneli, czyli zdjęc
+      i dzięki temu galeria się rozprowadza na całą stronę*/
+    justify-content: center; /*wyrównuje flexowe elementy, czyli elastycznych elementy p w containerze panel*/
+	align-items: center; /*wyśrodkowanie elastycznych eleementów p*/	
+	display: flex; 
+	flex-direction: column; /*ustawia elsatyczne elementy p pionowo*/
+}
+.panel1 {background-image: url('https://cdn.pixabay.com/photo/2018/05/02/10/33/computer-3368242_960_720.jpg');}
+.panel2 {background-image: url('https://cdn.pixabay.com/photo/2014/03/22/22/15/twitter-292988_960_720.jpg');}
+.panel3 {background-image: url('https://cdn.pixabay.com/photo/2018/05/04/10/30/team-3373638_960_720.jpg');}
+.panel4 {background-image: url('https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_960_720.jpg');}
+.panel5 {background-image: url('https://cdn.pixabay.com/photo/2017/10/12/22/17/background-2846221__340.jpg');}
+
+.panel1, .panel2, .panel3, .panel4, .panel5 {
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*flex item*/
+.panel > * {
+	margin: 0;
+	width: 100%;
+	/*transition:transform 0.5s;*/
+	border: 1px solid red; /*obramowanie każdego elementu panel*/
+	flex: 1 0 auto; /*podzielone container na elementy panel czerwonym borderem*/
+	display: flex;
+	justify-content: center; /*wyrówna do środka od lewa do prawa*/
+	align-items: center; /*wyrówna od góry do dołu*/
+}
+.panel p {
+	text-transform: uppercase;
+	font-family: 'Amatic SC', cursive;
+	text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 
+				 0 0 14px rgba(0, 0, 0, 0.45); /*tworzy cienie wokół tekstu, minimlane widoczne*/
+	font-size: 2em; /*wielkość tekstu - element p 
+	- spowodowała powiększenie się elementów panel*/			 
+}
+.panel p:nth-child(2) {
+	font-size: 4em; /* nth-child(2) wybrano drugie dziecko p rodzica panel */
+}

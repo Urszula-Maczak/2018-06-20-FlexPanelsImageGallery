@@ -51,7 +51,6 @@ elemencie będzie można zastosować conten-box czy padding-box bo jest wyczyszc
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-
 /*flex item*/
 .panel > * {
 	margin: 0;
@@ -64,7 +63,6 @@ elemencie będzie można zastosować conten-box czy padding-box bo jest wyczyszc
 	justify-content: center; /*wyrówna do środka od lewa do prawa*/
 	align-items: center; /*wyrówna od góry do dołu*/
 }
-
 /* .panel > *:first-child i last-child oznacza ze w kontenerze panel wszystkie pierwsze elementy panels 
 zostaną poddane transform*/
 .panel > *:first-child {
@@ -83,7 +81,6 @@ zostaną poddane transform*/
 	transform: translateY(0); /*właściwość transform o wartości translateY(0) 
 	pozwala przywrócić element z dołu, kiedy element ma klasę open-active*/
 }
-
 .panel p {
 	text-transform: uppercase;
 	font-family: 'Amatic SC', cursive;

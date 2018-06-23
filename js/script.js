@@ -3,6 +3,7 @@ function toggleOpen() {
 	this.classList.toggle('open'); //funkcja która dodaje dynamicznie klasę open, 
 									//czyli rozszerza element panel o dodatkową przestrzeń flex: 5
 }
+
 function toggleActive(e) {
 	console.log(e.propertyName); //w konsoli wyświetli front-size, flex-grow (czyli inaczej flex) - właściwości selektora CSS .panel.open
 	if(e.propertyName.includes('flex')) { //instrukcja sprawdza czy jest true kiedy argument obeumuje słowo flex, 
